@@ -119,7 +119,7 @@ async function processMatch(match) {
     league = 'League ID: ' + String(league).replace('comp_', '');
   }
 
-  let score = '0:0';
+  let score = 'null';
   if (match.score) {
     if (match.score.full_time) {
       score = `${match.score.full_time.home ?? 0}:${match.score.full_time.away ?? 0}`;
