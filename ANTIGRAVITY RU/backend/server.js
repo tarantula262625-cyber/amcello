@@ -208,7 +208,7 @@ function formatStatus(match) {
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 // ── SERVERİ İŞƏ SALMA (Railway Üçün Dinamik Port) ─────────────────────────────
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log('');
   console.log('╔══════════════════════════════════════════╗');
