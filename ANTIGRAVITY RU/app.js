@@ -1,5 +1,5 @@
 // ── Config ────────────────────────────────────────────────────────────────────
-const API_BASE = 'https://amcello-production.up.railway.app';
+const API_BASE = 'https://amcello-production.up.railway.app/api';
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const datePicker      = document.getElementById('datePicker');
