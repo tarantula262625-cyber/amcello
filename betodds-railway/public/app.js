@@ -199,7 +199,7 @@ function buildMatchRow(m) {
       </div>
     </td>
     <td class="score-cell">
-      ${m.score && m.score !== '0:0'
+      ${m.score
         ? `<span class="score-badge">${escHtml(m.score)}</span>`
         : '<span style="color:var(--text3)">—</span>'}
     </td>
