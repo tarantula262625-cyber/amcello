@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BetOdds Analyzer — Bet365 Opening Odds</title>
+  <meta name="description" content="Bet365 opening odds analizi — betexplorer.com-dan günlük futbol matçları üçün 1X2 açılış əmsalları" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⚽</span>
+        <div>
+          <span class="logo-title">BetOdds</span>
+          <span class="logo-sub">Analyzer</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="status-dot" id="statusDot" title="Server status"></div>
+        <span class="status-text" id="statusText">Yüklənir...</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MAIN ───────────────────────────────────────────────── -->
+  <main class="main">
+
+    <!-- Controls -->
+    <section class="controls-section">
+      <div class="controls-card">
+        <div class="controls-left">
+          <label class="ctrl-label" for="datePicker">📅 Tarix seç</label>
+          <input type="date" id="datePicker" class="date-input" />
+        </div>
+        <div class="controls-center">
+          <button id="loadBtn" class="btn btn-primary">
+            <span class="btn-icon">🔍</span> Yüklə
+          </button>
+          <button id="refreshBtn" class="btn btn-secondary">
+            <span class="btn-icon">🔄</span> Yenilə
+          </button>
+        </div>
+        <div class="controls-right">
+          <input type="text" id="searchInput" class="search-input" placeholder="🔎  Komanda axtar..." />
+        </div>
+      </div>
+
+      <!-- Summary bar -->
+      <div class="summary-bar" id="summaryBar" style="display:none">
+        <span class="summary-item"><b id="totalMatches">0</b> matç</span>
+        <span class="summary-sep">|</span>
+        <span class="summary-item"><b id="withOdds">0</b> Bet365 odds</span>
+        <span class="summary-sep">|</span>
+        <span class="summary-item cache-badge" id="cacheBadge"></span>
+      </div>
+    </section>
+
+    <!-- Loading -->
+    <div class="loading-wrap" id="loadingWrap" style="display:none">
+      <div class="spinner"></div>
+      <p class="loading-text" id="loadingText">Betexplorer-dən məlumat çəkilir...</p>
+    </div>
+
+    <!-- Error -->
+    <div class="error-box" id="errorBox" style="display:none">
+      <span class="error-icon">⚠️</span>
+      <p id="errorMsg">Xəta baş verdi</p>
+      <button class="btn btn-secondary" onclick="loadOdds(false)">Yenidən cəhd et</button>
+    </div>
+
+    <!-- Empty -->
+    <div class="empty-box" id="emptyBox" style="display:none">
+      <span class="empty-icon">📭</span>
+      <p>Bu tarix üçün matç tapılmadı</p>
+    </div>
+
+    <!-- Results -->
+    <section id="resultsSection" style="display:none">
+      <div id="leagueContainer"></div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer">
+    <p>Məlumat mənbəyi: <a href="https://www.betexplorer.com" target="_blank">betexplorer.com</a> — Bet365 Opening Odds</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
