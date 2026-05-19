@@ -119,8 +119,9 @@ async function processMatch(match) {
     league = 'League ID: ' + String(league).replace('comp_', '');
   }
 
-  let score = 'null';
-  if (match.score) {
+  let score = null;
+  const status = String(match.status || '');
+  if ((status === 'finished' || status === 'live') && match.score) {
     if (match.score.full_time) {
       score = `${match.score.full_time.home ?? 0}:${match.score.full_time.away ?? 0}`;
     } else if (typeof match.score === 'object' && match.score.home !== undefined) {
